@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  /* CIA Terminal Theme */
+  --background: #000000;
+  --foreground: #00ff41;
+  --card-bg: #0d0d0d;
+  --card-border: #1f2937;
+  --accent-cyan: #008f11;
+  --accent-green: #00ff41;
+  --accent-red: #cc0000;
+  --accent-amber: #ffb000;
+  --muted: #4d4d4d;
+  --terminal-font: 'Courier New', 'Courier', monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), 'Courier New', monospace; /* Enforce mono/terminal feel */
+  letter-spacing: 0.05em;
+}
+
+/* Scrollbar Styling for Terminal Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border: 1px solid #003300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+/* Terminal Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 8px rgba(0, 143, 17, 0.4);
+}
+
+.glow-red {
+  box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
+}
+
+.glow-green {
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+/* CRT Scanline Effect (Optional but cool) */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.15;
+}
